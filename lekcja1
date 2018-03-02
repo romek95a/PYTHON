@@ -1,3 +1,53 @@
+#1
+imie=input('Podaj imie: ')
+nazwisko=input('Podaj nazwisko: ')
+wiek=input('Podaj wiek: ')
+if(int(wiek)<18):
+  print("Czesc "+imie+" "+nazwisko+", jestes niepelnoletni.")
+else:
+  print("Czesc "+imie+" "+nazwisko+", jestes pelnoletni.")
+#2
+l1=input("Podaj pierwsza liczbe: ")
+l2=input("Podaj druga liczbe: ")
+l3=input("Podaj trzecia liczbe: ")
+print("Najwieksza to ")
+if(l1>l2 and l1>l3):
+    print(l1)
+elif(l2>l1 and l2>l3):
+    print(l2)
+else:
+    print(l3)
+#3
+i=65
+while(i<91):
+    print(chr(i)+" "+chr(i+32))
+    i+=1
+#4
+i=65
+liczba=input("Podaj liczbe ")
+while(i<91):
+    print(chr(i)+" "+chr(i+32))
+    i+=int(liczba)
+#5
+tab=[]
+n=input("Podaj zakres tablicy: ")
+for i in range (0,int(n)):
+    liczba=input()
+    tab.append(int(liczba))
+kier=input("Podaj kierunek (rosnocy/malejacy): ")
+z1=input("Podaj dolny zakres: ")
+z2=input("Podaj gorny zakres: ")
+if(kier=="rosnacy"):
+    tab.sort()
+    for liczba in tab:
+        if(liczba>=int(z1) and liczba<=int(z2)):
+            print(liczba)
+if(kier=="malejacy"):
+    tab.sort(reverse=True)
+    for liczba in tab:
+        if(liczba>=int(z1) and liczba<=int(z2)):
+            print(liczba)
+#6
 def f(l):
     if(l==1 or l==0):
         return 1
