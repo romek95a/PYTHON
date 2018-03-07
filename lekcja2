@@ -51,6 +51,8 @@ krotka=[(7,2),(4,4),(5,9),(1,8)]
 krotkaSort=sorted(punkty(krotka,(0,0)), key = lambda tup: tup[0])
 print(krotkaSort)
 #6
+import os
 def gen(a):
   for plik in os.listdir(a):
-    print(a)
+    print(plik)
+gen("C:\Users\Student.Desktop-ICOM-TR")
