@@ -1,1 +1,27 @@
-
+#1
+def f(napis):
+  a=napis.split(" ")
+  i=0
+  b=[]
+  for x in a:
+    b.append(a[i]+" "+str(len(a[i])))
+    i+=1
+  return b
+print (f("ala ma kota"))
+#1
+napis="ala ma kota"
+lista=[(slowo,len(slowo)) for slowo in napis.split()]
+print (lista)
+#2
+def fib(n):
+  l1=0
+  l2=1
+  lista=[]
+  for i in range(0,int(n)):
+    lista.append(l1+l2)
+    pom=l1
+    l1=l2
+    l2+=pom
+  return lista
+n=input("Podaj n:")
+print(fib(int(n)))
