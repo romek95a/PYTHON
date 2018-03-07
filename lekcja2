@@ -55,4 +55,4 @@ import os
 def gen(a):
   for plik in os.listdir(a):
     print(plik)
-gen("C:\Users\Student.Desktop-ICOM-TR")
+gen("C:\Users\Student.Desktop-ICOM-TR\Desktop")
