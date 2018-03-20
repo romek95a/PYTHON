@@ -1,0 +1,54 @@
+#zadanie 1
+class liczbaZespolona:
+  para=(None,None)
+  def __init__(self,a,b):
+    self.para=(a,b)
+  def __add__(self, druga):
+    return (self.para[0]+druga.para[0],self.para[1]+druga.para[1])
+  def __sub__(self, druga):
+    return (self.para[0]-druga.para[0],self.para[1]-druga.para[1])
+  def __mul__(self, druga):
+    return (self.para[0]*druga.para[0],self.para[1]*druga.para[1])
+  def __floordiv__(self, druga):
+    if(druga.para[0]!=0 and druga.para[1]!=0):
+      return (self.para[0]/druga.para[0],self.para[1]/druga.para[1])
+    else:
+      return "Brak wyniku"
+  def modul(self):
+    return (self.para[0]**2+self.para[1]**2)**0.5
+  def __lt__(self, druga):
+    if (self.modul()<druga.modul()):
+      return True
+    else:
+      return False
+  def __gt__(self, druga):
+    if(self.modul()>druga.modul()):
+      return True
+    else:
+      return False
+  def __eq__(self,druga):
+    if(self.modul()==druga.modul()):
+      return True
+    else:
+      return False
+  def __str__(self):
+    return str(self.para[0])+", "+str(self.para[1])
+obiekt1=liczbaZespolona(4,12)
+obiekt2=liczbaZespolona(9,7)
+print(obiekt1+obiekt2)
+print(obiekt1-obiekt2)
+print(obiekt1*obiekt2)
+print(obiekt1//obiekt2)
+print("Modul obiektu 1: ")
+print("Modul obiektu 1: ")
+print(obiekt1.modul())
+print("modul obiektu 2: ")
+print(obiekt2.modul())
+if(obiekt1>obiekt2):
+  print (-1)
+elif(obiekt1<obiekt2):
+  print ("1")
+else:
+  print ("0")
+print(obiekt1)
+#zadanie 2
