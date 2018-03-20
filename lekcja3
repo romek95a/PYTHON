@@ -52,3 +52,30 @@ else:
   print ("0")
 print(obiekt1)
 #zadanie 2
+class Punkt2D:
+  x1=None
+  y1=None
+  x2=None
+  y2=None
+  def odleglosc(self):
+    return ((self.x1-self.x2)**2+(self.y1-self.y2)**2)**0.5
+class Punkt3D(Punkt2D):
+  z1=None
+  z2=None
+  def odleglosc(self):
+    return ((self.x1-self.x2)**2+(self.y1-self.y2)**2+(self.z1-self.z2)**2)**0.5
+p1=Punkt2D()
+p1.x1=2
+p1.x2=4
+p1.y1=5
+p1.y2=7
+print(p1.odleglosc())
+p2=Punkt3D()
+p2.x1=4
+p2.x2=3
+p2.y1=8
+p2.y2=9
+p2.z1=8
+p2.z2=10
+print(p2.odleglosc())
+#zadanie 3
