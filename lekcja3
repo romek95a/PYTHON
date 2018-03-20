@@ -79,3 +79,36 @@ p2.z1=8
 p2.z2=10
 print(p2.odleglosc())
 #zadanie 3
+class Kolo:
+  __promien=None
+  __grubosc=None
+  def setPromien(self, promien):
+    self.__promien=promien
+  def setGrubosc(self, grubosc):
+    self.__grubosc=grubosc
+class Silnik:
+  __moc=None
+  __rodzaj=None
+  def setMoc(self, moc):
+    self.__moc=moc
+  def setRodzaj(self, rodzaj):
+    self.__rodzaj=rodzaj
+class Siedzenie:
+  __kolor=None
+  __ilosc=None
+  def setKolor(self, kolor):
+    self.__kolor=kolor
+  def setIlosc(self, ilosc):
+    self.__ilosc=ilosc
+class Samochod(Kolo,Silnik,Siedzenie):
+  __marka=None
+  __typ=None
+  def setKolo(self,promien,grubosc):
+    super().setPromien(promien)
+    super().setGrubosc(grubosc)
+  def setSilnik(self,moc,rodzaj):
+    super().setMoc(moc)
+    super().setRodzaj(rodzaj)
+  def setSiedzenie(self,kolor,ilosc):
+    super().setKolor(kolor)
+    super().setIlosc(ilosc)
