@@ -103,6 +103,9 @@ class Siedzenie:
 class Samochod(Kolo,Silnik,Siedzenie):
   __marka=None
   __typ=None
+  def __init__(self,marka,typ):
+    self.__marka=marka
+    self.__typ=typ
   def setKolo(self,promien,grubosc):
     super().setPromien(promien)
     super().setGrubosc(grubosc)
