@@ -1,3 +1,4 @@
+#zadanie 1
 n1="""k1:w1
 k2:w2
 k3:w3"""
@@ -9,3 +10,4 @@ def funkcja(n1):
         slownik[s1[0]]=s1[1]
     return slownik
 print(funkcja(n1))
+#zadanie 2
