@@ -1,1 +1,11 @@
-
+n1="""k1:w1
+k2:w2
+k3:w3"""
+def funkcja(n1):
+    a=(n1.split("\n"))
+    slownik={}
+    for x in a:
+        s1=x.split(":")
+        slownik[s1[0]]=s1[1]
+    return slownik
+print(funkcja(n1))
