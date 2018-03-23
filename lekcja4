@@ -83,4 +83,4 @@ for x in tab:
 		tab2+=x
 print (tab2)
 open(nazwa[2],"w").write(tab2)
-#6
+#zadanie 6
