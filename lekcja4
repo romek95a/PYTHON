@@ -11,3 +11,37 @@ def funkcja(n1):
     return slownik
 print(funkcja(n1))
 #zadanie 2
+import sys
+nazwa=sys.argv
+plik=open(nazwa[1])
+n1=plik.read()
+plik.close
+def funkcja(n1):
+    a=(n1.split("\n"))
+    slownik={}
+    for x in a:
+        s1=x.split(":")
+        slownik[s1[0]]=s1[1]
+    return slownik
+print(funkcja(n1))
+#zadanie 3
+import sys
+nazwa=sys.argv
+plik=open(nazwa[1])
+n1=plik.read()
+plik.close
+def funkcja(n1):
+    a=(n1.split("\n"))
+    slownik={}
+    for x in a:
+        s1=x.split(":")
+        slownik[s1[0]]=s1[1]
+    return slownik
+slowo=input("Podaj slowo: ")
+slownik=funkcja(n1)
+i=0
+for x in slownik.values():
+	if x==slowo:
+		i+=1
+print (i)
+#zadanie 4
