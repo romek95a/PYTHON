@@ -67,12 +67,12 @@ else:
 	for x in tab2:
 		if x.find(ciag)!=-1:
 			print (x)
-#zadanie 5
+#zadanie 5/6
 import sys
 nazwa=sys.argv
 tab=open(nazwa[1]).read()
 parametr=input("Podaj parametr szyfru cezara: ")
-tab2="a"
+tab2=""
 for x in tab:
 	if x!=" " and x!="\n":
 		a=ord(x)
@@ -83,4 +83,46 @@ for x in tab:
 		tab2+=x
 print (tab2)
 open(nazwa[2],"w").write(tab2)
-#zadanie 6
+#zadanie 7
+import sys
+nazwa=sys.argv
+p1=open(nazwa[1]).read()
+p2=open(nazwa[2]).read()
+def toTab(p):
+	tab=[]
+	a=""
+	for x in p:
+		if x!="\n":
+			a+=x
+		else:
+			tab.append(a)
+			a=""
+	return tab
+tab1=toTab(p1)
+tab2=toTab(p2)
+def f(tab1,tab2):
+	tab3=[]
+	czy=False
+	for x in tab1:
+		czy=False
+		for y in tab2:
+			print (x," ? ",y)
+			if x==y:
+				czy=True
+		if czy==False:
+			tab3.append(x)
+	for x in tab2:
+		czy=False
+		for y in tab1:
+			print (x," ? ",y)
+			if x==y:
+				czy=True
+		if czy==False:
+			tab3.append(x)
+	return tab3
+tab3=f(tab1,tab2)
+print (tab3)
+string=""
+for x in tab3:
+	string+=x+"\n"
+p3=open(nazwa[3],"w").write(string)
