@@ -68,3 +68,19 @@ else:
 		if x.find(ciag)!=-1:
 			print (x)
 #zadanie 5
+import sys
+nazwa=sys.argv
+tab=open(nazwa[1]).read()
+parametr=input("Podaj parametr szyfru cezara: ")
+tab2="a"
+for x in tab:
+	if x!=" " and x!="\n":
+		a=ord(x)
+		a+=int(parametr)
+		x=chr(a)
+		tab2+=x
+	else:
+		tab2+=x
+print (tab2)
+open(nazwa[2],"w").write(tab2)
+#6
