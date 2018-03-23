@@ -45,3 +45,26 @@ for x in slownik.values():
 		i+=1
 print (i)
 #zadanie 4
+sciezka=input("Podaj sciezke: ")
+ciag=input("Podaj ciag: ")
+tab=[]
+tab2=[]
+def f(tab):
+	tabtab=tab.split("\n")
+	return tabtab
+if sciezka=="-":
+	print("Wczytaj linie: ")
+	cos="."
+	while cos!="":
+		cos=input()
+		tab2.append(cos)
+	for x in tab2:
+		if x.find(ciag)!=-1:
+			print (x)
+else:
+	tab=open(sciezka).read()
+	tab2=f(tab)
+	for x in tab2:
+		if x.find(ciag)!=-1:
+			print (x)
+#zadanie 5
