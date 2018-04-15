@@ -15,3 +15,51 @@ for linia in plik:
 			i=0
 			l=""
 #zadanie 2
+#!/usr/bin/python
+import sys
+nazwa=input()
+plik=open(nazwa).read()
+szer=int(sys.argv[1])
+i=0
+l=''
+for linia in plik:
+	for znak in linia:
+		i=i+1
+		l=l+znak
+		if(i==szer or znak=='\n'):
+			print(l.center(szer))
+			i=0
+			l=""
+#zadanie 3
+#!/usr/bin/python
+nazwa=input()
+plik=open(nazwa).read()
+i=0
+calosc=0
+adres=""
+for linia in plik:
+	for znak in linia:
+		if(ord(znak)>=48 and ord(znak)<=57):
+			if(i==0 and ord(znak)<=50):
+				i=1
+				adres=adres+znak
+			elif(i==1 and ((ord(adres[0])<=49) or (ord(adres[0])==50 and ord(znak)<=53))):
+				i=2
+				adres=adres+znak
+			elif(i==2 and ((ord(adres[0])==50 and ord(adres[1])==53 and ord(znak)<=53) or (ord(adres[0])==50 and ord(adres[1])<53) or ord(adres[0])<=49)):
+				i=3
+				adres=adres+znak
+				calosc+=3
+		elif(i==3 and ord(znak)==46):
+			i=0
+			calosc+=1
+			if(calosc<15):
+				adres=adres+znak
+			else:
+				calosc=0
+		elif(calosc==15):
+			print(adres)
+			adres=""
+			calosc=0
+			i=0
+#zadanie 4
