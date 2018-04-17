@@ -1,0 +1,15 @@
+#zadanie 1
+import math
+def pierw(liczba):
+	try:
+		wynik=math.sqrt(liczba)
+	except (TypeError):
+		print("Zly typ zmiennej!")
+	except (ValueError):
+		print("Zla wartosc!")
+	else:
+		return wynik
+try:
+	print(pierw(d))
+except (NameError):
+	print("Nie ma takiej zmiennej!")
