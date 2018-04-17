@@ -38,4 +38,12 @@ def walidacja(email):
 	''', re.VERBOSE | re.IGNORECASE)
 	return pattern.search(email)
 e1=Email('adressss@gmail.com')
-#zadanie 3
+#zadanie 4
+import urllib.request
+response=urllib.request.urlopen('https://pl.wikibooks.org/wiki/Zanurkuj_w_Pythonie/Wyci%C4%85ganie_danych_z_dokumentu_HTML')
+html=response.read()
+sciezka=input("Podaj sciezke ")
+plik=open(sciezka,'w')
+plik.write(str(html))
+plik.close
+#zadanie 5
