@@ -13,3 +13,29 @@ try:
 	print(pierw(d))
 except (NameError):
 	print("Nie ma takiej zmiennej!")
+#zadanie 2
+import re
+class WrongEmail (Exception):
+	pass
+class Email:
+	email=[]
+	def __init__(self, email):
+		if walidacja(email)!=None:
+			walidacja(email)
+			print("Dodano poprawnie", walidacja(email))
+		else:
+			raise WrongEmail("Zly adres e-mail!")
+			
+def walidacja(email):
+	pattern=re.compile(r'''
+	(\D{1}) #na pocz nie moze byc cyfry
+	((\d|\D)*) #dalej cokolwiek
+	(@) #maupa
+	(\D{1}) #na pocz nazwy nie moze byc cyfry
+	((\D*)|(\d*)) #dalej cokolwiek
+	(.) #kropka
+	(\D*) #domena
+	''', re.VERBOSE | re.IGNORECASE)
+	return pattern.search(email)
+e1=Email('adressss@gmail.com')
+#zadanie 3
