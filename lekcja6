@@ -44,6 +44,18 @@ response=urllib.request.urlopen('https://pl.wikibooks.org/wiki/Zanurkuj_w_Python
 html=response.read()
 sciezka=input("Podaj sciezke ")
 plik=open(sciezka,'w')
-plik.write(str(html))
+plik.write(html)
 plik.close
 #zadanie 5
+from xml.dom import minidom
+import urllib.request
+response=urllib.request.urlopen('http://www.yr.no/place/Poland/Lublin/Lublin/forecast.xml')
+xml=response.read().decode('utf-8')
+sciezka=input("Podaj sciezke ")
+plik=open(sciezka,'w')
+plik.write(xml)
+plik.close
+doc=minidom.parse(sciezka)
+a=doc.getElementsByTagName('sun')
+print(a[0].attributes["rise"].value)
+#zadanie 6
