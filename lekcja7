@@ -1,0 +1,59 @@
+#zadanie 1
+import sqlite3
+connection=sqlite3.connect('mojaBaza.db')
+cursor=connection.cursor()
+cursor.execute('''CREATE TABLE IF NOT EXISTS
+tabela(id integer, title text, author text, year integer, price year)''')
+cursor.execute('''INSERT INTO tabela VALUES
+(1,'Podziemy krag', 'Chuck Palahniuk', 1996, 34.99)''')
+cursor.execute('''INSERT INTO tabela VALUES
+(2, 'Harry Potter i Kamien Filozoficzny', 'J. K. Rowling', 1997, 29.99)''')
+for row in cursor.execute('SELECT * FROM tabela'):
+	print (row)
+books=[(3,'thirdBook', 'thirdAuthor', 2001, 10.99),
+(4,'nextBook', 'nextAuthor', 1969, 25.99)]
+cursor.executemany('''INSERT INTO tabela (id, title, author, year, price) VALUES (?,?,?,?,?)''',books)
+print()
+for row in cursor.execute('SELECT * FROM tabela'):
+	print (row)
+for row in cursor.execute('SELECT * FROM tabela WHERE id=?',(1,)):
+	print (row)
+newAuthor='author3'
+userId=3
+cursor.execute('UPDATE tabela SET author=? WHERE id=?',(newAuthor,userId))
+cursor.execute('DELETE FROM tabela WHERE id=4')
+connection.commit()
+for row in cursor.execute('SELECT * FROM tabela'):
+	print (row)
+#zadanie 2
+import sqlite3
+connection=sqlite3.connect('mojaBaza.db')
+cursor=connection.cursor()
+cursor.execute('''CREATE TABLE IF NOT EXISTS
+tabela(id integer, title text, author text, year integer, price year)''')
+cursor.execute('''INSERT INTO tabela VALUES
+(1,'Podziemy krag', 'Chuck Palahniuk', 1996, 34.99)''')
+cursor.execute('''INSERT INTO tabela VALUES
+(2, 'Harry Potter i Kamien Filozoficzny', 'J. K. Rowling', 1997, 29.99)''')
+for row in cursor.execute('SELECT * FROM tabela'):
+	print (row)
+books=[(3,'thirdBook', 'thirdAuthor', 2001, 10.99),
+(4,'nextBook', 'nextAuthor', 1969, 25.99)]
+cursor.executemany('''INSERT INTO tabela (id, title, author, year, price) VALUES (?,?,?,?,?)''',books)
+print()
+for row in cursor.execute('SELECT * FROM tabela'):
+	print (row)
+for row in cursor.execute('SELECT * FROM tabela WHERE id=?',(1,)):
+	print (row)
+newAuthor='author3'
+userId=3
+cursor.execute('UPDATE tabela SET author=? WHERE id=?',(newAuthor,userId))
+cursor.execute('DELETE FROM tabela WHERE id=4')
+connection.commit()
+for row in cursor.execute('SELECT * FROM tabela'):
+	print (row)
+connection.rollback()
+for row in cursor.execute('SELECT * FROM tabela'):
+	print (row)
+#zadanie 3
+
