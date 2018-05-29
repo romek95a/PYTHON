@@ -1,4 +1,4 @@
-#zadanie1
+#zadanie 1
 import tkinter as tk
 from tkinter import *
 root=tk.Tk()
@@ -60,3 +60,152 @@ label2=Label(root, text="Sekundnik")
 label2.pack()
 root.mainloop()
 #zadanie 3
+import tkinter as tk
+from tkinter import *
+from tkinter import font as tkfont
+root=tk.Tk()
+liczba=""
+liczba2=""
+dzialanie=""
+defaultFont=tkfont.Font(family="Comic Sans MS", size=16)
+textArea=Text(root, height=1, width=20, font=defaultFont)
+textArea.grid(row=0, columnspan=4)
+def c9():
+	global liczba
+	liczba=liczba+"9"
+	textArea.insert(INSERT, "9")
+def c8():
+	global liczba
+	liczba=liczba+"8"
+	textArea.insert(INSERT, "8")
+def c7():
+	global liczba
+	liczba=liczba+"7"
+	textArea.insert(INSERT, "7")
+def c6():
+	global liczba
+	liczba=liczba+"6"
+	textArea.insert(INSERT, "6")
+def c5():
+	global liczba
+	liczba=liczba+"5"
+	textArea.insert(INSERT, "5")
+def c4():
+	global liczba
+	liczba=liczba+"4"
+	textArea.insert(INSERT, "4")
+def c3():
+	global liczba
+	liczba=liczba+"3"
+	textArea.insert(INSERT, "3")
+def c2():
+	global liczba
+	liczba=liczba+"2"
+	textArea.insert(INSERT, "2")
+def c1():
+	global liczba
+	liczba=liczba+"1"
+	textArea.insert(INSERT, "1")
+def c0():
+	global liczba
+	liczba=liczba+"0"
+	textArea.insert(INSERT, "0")
+def cu():
+	global liczba2
+	global liczba
+	liczba2=liczba
+	liczba=""
+	textArea.delete('1.0', END)
+	global dzialanie
+	dzialanie="/"
+def cx():
+	global liczba2
+	global liczba
+	liczba2=liczba
+	liczba=""
+	textArea.delete('1.0', END)
+	global dzialanie
+	dzialanie="x"
+def cm():
+	global liczba2
+	global liczba
+	liczba2=liczba
+	liczba=""
+	textArea.delete('1.0', END)
+	global dzialanie
+	dzialanie="-"
+def cp():
+	global liczba2
+	global liczba
+	liczba2=liczba
+	liczba=""
+	textArea.delete('1.0', END)
+	global dzialanie
+	dzialanie="+"
+def cr():
+	global liczba2
+	global liczba
+	global dzialanie
+	if dzialanie=="/" and liczba2!="" and liczba!="0":
+		temp=int(liczba)
+		temp2=int(liczba2)
+		temp=temp2/temp
+		liczba2=str(temp)
+		liczba=""
+	elif dzialanie=="x" and liczba2!="":
+		temp=int(liczba)
+		temp2=int(liczba2)
+		temp=temp2*temp
+		liczba2=str(temp)
+		liczba=""
+	elif dzialanie=="-" and liczba2!="":
+		temp=int(liczba)
+		temp2=int(liczba2)
+		temp=temp2-temp
+		liczba2=str(temp)
+		liczba=""
+	elif dzialanie=="+" and liczba2!="":
+		temp=int(liczba)
+		temp2=int(liczba2)
+		temp=temp2+temp
+		liczba2=str(temp)
+		liczba=""
+	
+	textArea.delete('1.0', END)
+	textArea.insert(INSERT,liczba2)
+def cdel():
+	textArea.delete('1.0', END)
+	liczba=""
+p7=Button(root,text="7", height=1, width=4,font=defaultFont, command=c7)
+p7.grid(row=1,column=0)
+p8=Button(root,text="8", height=1, width=4,font=defaultFont, command=c8)
+p8.grid(row=1,column=1)
+p9=Button(root,text="9", height=1, width=4,font=defaultFont, command=c9)
+p9.grid(row=1,column=2)
+pu=Button(root,text="/", height=1, width=4,font=defaultFont, command=cu)
+pu.grid(row=1,column=3)
+p4=Button(root,text="4", height=1, width=4,font=defaultFont, command=c4)
+p4.grid(row=2,column=0)
+p5=Button(root,text="5", height=1, width=4,font=defaultFont, command=c5)
+p5.grid(row=2,column=1)
+p6=Button(root,text="6", height=1, width=4,font=defaultFont, command=c6)
+p6.grid(row=2,column=2)
+px=Button(root,text="x", height=1, width=4,font=defaultFont, command=cx)
+px.grid(row=2,column=3)
+p1=Button(root,text="1", height=1, width=4,font=defaultFont, command=c1)
+p1.grid(row=3,column=0)
+p2=Button(root,text="2", height=1, width=4,font=defaultFont, command=c2)
+p2.grid(row=3,column=1)
+p3=Button(root,text="3", height=1, width=4,font=defaultFont, command=c3)
+p3.grid(row=3,column=2)
+pm=Button(root,text="-", height=1, width=4,font=defaultFont, command=cm)
+pm.grid(row=3,column=3)
+pdel=Button(root,text="C", height=1, width=4,font=defaultFont, command=cdel)
+pdel.grid(row=4,column=0)
+p0=Button(root,text="0", height=1, width=4,font=defaultFont, command=c0)
+p0.grid(row=4,column=1)
+pr=Button(root,text="=", height=1, width=4,font=defaultFont, command=cr)
+pr.grid(row=4,column=2)
+pp=Button(root,text="+", height=1, width=4,font=defaultFont, command=cp)
+pp.grid(row=4,column=3)
+root.mainloop()
