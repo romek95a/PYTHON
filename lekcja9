@@ -1,1 +1,25 @@
 #zadanie1
+import tkinter as tk
+from tkinter import *
+root=tk.Tk()
+v = tk. StringVar()
+v.set("nic")
+w=tk.Label(root, text="Komunikat poczatkowy")
+w.pack()
+def onClick():
+	w.config(text="Komunikat koncowy")
+p=tk.Button(root, text="Przycisk", command=onClick)
+p.pack()
+def onCheck():
+	p.config(fg=str(v.get()))
+R1=tk.Radiobutton(root, text="zielony",variable=v, value="green")
+R1.pack()
+R2=Radiobutton(root, text="niebieski",variable=v, value="blue")
+R2.pack()
+R3=Radiobutton(root, text="czerwony",variable=v, value="red")
+R3.pack()
+R1.config(command=onCheck)
+R2.config(command=onCheck)
+R3.config(command=onCheck)
+root.mainloop()
+#zadanie 2
