@@ -23,3 +23,40 @@ R2.config(command=onCheck)
 R3.config(command=onCheck)
 root.mainloop()
 #zadanie 2
+import tkinter as tk
+from tkinter import *
+from time import sleep
+import _thread
+czas=0
+root=tk.Tk()
+def time():
+	global czas
+	if czas>0:
+		sleep(1)
+		czas=czas-1
+		label.config(text=str(czas))
+		time()
+	else:
+		label2.config(text="Koniec odliczania")
+		label.config(text=str(czas))
+def onClick():
+	temp=textArea.get("1.0",END)
+	global czas
+	czas=int(temp)
+	label.config(text=str(czas))
+	if (czas>0):
+		try:
+			_thread.start_new_thread(time())
+		except:
+			print("Error")
+textArea=Text(root,height=1,width=5)
+textArea.pack()
+button=Button(root, text="Start", command=onClick)
+button.pack()
+label=Label(root)
+label.pack()
+label.config(text=str(czas))
+label2=Label(root, text="Sekundnik")
+label2.pack()
+root.mainloop()
+#zadanie 3
